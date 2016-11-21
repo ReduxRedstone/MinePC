@@ -1,0 +1,38 @@
+{
+  "name": "minepc",
+  "version": "1.0.0",
+  "description": "A Minecraft server chat client written in NodeJS",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "minecraft-protocol": "^1.1.0",
+    "body-parser": "^1.15.2",
+    "prismarine-tokens": "^1.0.3",
+    "jade": "^1.11.0",
+    "socket.io": "^1.6.0"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ReduxRedstone/MinePC.git"
+  },
+  "keywords": [
+    "minecraft",
+    "chat",
+    "client",
+    "nodejs",
+    "reduxredstone",
+    "minepc",
+    "nmp",
+    "node",
+    "protocol"
+  ],
+  "author": "ReduxRedstone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ReduxRedstone/MinePC/issues"
+  },
+  "homepage": "https://github.com/ReduxRedstone/MinePC#readme"
+}

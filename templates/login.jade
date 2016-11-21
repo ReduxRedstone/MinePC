@@ -1,0 +1,77 @@
+html
+  head
+    title= "Server Chat Login"
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    script(src='/files/js/jquery-2.1.4.min.js')
+    script(src='/files/js/metro.js')
+
+    link(href='/files/css/metro.css', rel='stylesheet')
+    link(href='/files/css/metro-icons.css', rel='stylesheet')
+    link(href='/files/css/metro-responsive.css', rel='stylesheet')
+    style.
+      .login-form {
+      width: 25rem;
+      height: 22.75rem;
+      position: fixed;
+      top: 30%;
+      margin-top: -9.375rem;
+      left: 50%;
+      margin-left: -12.5rem;
+      background-color: #ffffff;
+      opacity: 0;
+      -webkit-transform: scale(.8);
+      transform: scale(.8);
+      }
+    script.
+      $(function(){
+      var form = $(".login-form");
+      form.css({
+      opacity: 1,
+      "-webkit-transform": "scale(1)",
+      "transform": "scale(1)",
+      "-webkit-transition": ".5s",
+      "transition": ".5s"
+      });
+      });
+  body.bg-darker
+    .grid.login-form.padding20.block-shadow(style='opacity: 1; transform: scale(1.2); transition: 0.5s;')
+      form(lpformnum='1', action='/', method='post')
+        h1.text-light Login to server
+        hr.thin
+        br
+        .row.cells1
+          .cell
+            .input-control.text.full-size(data-role='input')
+              label(for='email') Email/Username:
+              input#user_email(name='email', type='text', placeholder='Enter your email address or username (for offline)', autocomplete="off", required)
+        .row.cells1
+          .cell
+            .input-control.password.full-size(data-role='input')
+              label(for='pass') Password:
+              input#user_pass(name='pass', type='password', placeholder='Enter your password (blank for offline server)', autocomplete="off")
+        .row.cells1
+          .cell
+            .input-control.server.full-size(data-role='input')
+              label(for='server') Server IP:
+              input#server_ip(name='server', type='text', placeholder='Server IP', autocomplete="off", required)
+        .row.cells2
+          .cell
+            .input-control.port.full-size(data-role='input')
+              label(for='port') Server Port:
+              input#server_port(name='port', type='text', value="25565", placeholder='Server Port', autocomplete="off", required)
+          .cell
+            .input-control.version.full-size(data-role='input')
+              label(for='version') Server Version:
+              select#server_port(name='version')
+                option 1.10.2
+                option 1.10.1
+                option 1.10
+                option 1.9.4
+                option 1.9.2
+                option 1.9
+                option 1.8.8
+                option 1.7.10
+        .form-actions
+          button.button.primary(type='submit') Login

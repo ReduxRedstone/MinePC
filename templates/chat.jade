@@ -1,0 +1,78 @@
+html
+    title= "Server chat"
+    script(src='/files/js/chat.js')
+    script(src='/files/js/jquery-2.1.4.min.js')
+    script(src='/files/js/metro.js')
+    script(src='/files/js/bootstrap.min.js')
+    script(src='/socket.io/socket.io.js')
+
+    link(href='/files/css/metro.css', rel='stylesheet')
+    link(href='/files/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/files/css/bootflat.css', rel='stylesheet')
+    link(href='/files/css/font-awesome.min.css', rel='stylesheet')
+    head
+        title= "Server Chat"
+    style.
+      .chat-controls {
+      position: fixed;
+      bottom: 0;
+      width:100%;
+      }
+      #content {
+      padding: 1%;
+      top: 0;
+      height:89%
+      }
+      #serverInfo {
+      padding: 1%;
+      top: 0;
+      height:89%
+      }
+      .btn-primary, .btn-primary:focus, .btn-hover-primary:hover, .btn-hover-primary:active, .btn-hover-primary.active, .btn.btn-active-primary:active, .btn.btn-active-primary.active, .dropdown.open>.btn.btn-active-primary, .btn-group.open .dropdown-toggle.btn.btn-active-primary {
+      background-color: #579ddb;
+      border-color: #5fa2dd;
+      color: #fff !important;
+      }
+      .btn {
+      cursor: pointer;
+      /* background-color: transparent; */
+      color: white;
+      padding: 6px 12px 6px;
+      border-radius: 0;
+      border: 1px solid 0;
+      font-size: 11px;
+      line-height: 1.42857;
+      vertical-align: middle;
+      -webkit-transition: all .25s;
+      transition: all .25s;
+      }
+      .form-control {
+      font-size: 11px;
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid #e9e9e9;
+      transition-duration: .5s;
+      }
+      .panel-footer {
+      background-color: transparent;
+      border: 0;
+      }
+      ::-webkit-scrollbar {width: 0; visibility: none;}
+      ::-webkit-scrollbar-track {border-radius: 0; visibility: none;}
+      ::-webkit-scrollbar-thumb {border-radius: 0; visibility: none;}
+    body.bg-darker
+        .container-fluid
+            #content(data-simplebar-direction="vertical",style='width:100%;overflow-y:scroll;word-wrap:break-word;color:white;')
+            .panel-footer.chat-controls
+                .row
+                    .col-xs-9
+                        br
+                        br
+                        input#field.form-control.chat-input(type='text', placeholder='Message . . .', maxlength="100")
+                    .col-xs-2
+                        button#logout.btn.btn-danger.btn-block(type='submit', style='width: 100%;') Logout
+                        br
+                        button#send.btn.btn-primary.btn-block(type='submit', style='width: 100%;') Send
+        script.
+            loginUser("#{data[0]["email"]}","#{data[0]["pass"]}","#{data[0]["server"]}","#{data[0]["port"]}","#{data[0]["version"]}");
+
